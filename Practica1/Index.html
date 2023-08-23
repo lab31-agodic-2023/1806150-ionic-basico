@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Styles.css">
-  <title>Practica1</title>
+  <title>Practica3</title>
 </head>
 <body>
-  <div class="container">
-    <input type="text" id="textInput" placeholder="Escribe algo...">
-    <button id="printButton">Imprimir</button>
-    <button id="clearButton">Borrar</button>
+  <div id="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="login-form">
+      <label for="username">Nombre de Usuario:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <button type="button" onclick="showLoginMessage()">Iniciar Sesión</button>
+    </form>
+    <button onclick="showRegistrationMessage()">Registrarse</button>
+  </div>
+
+  <div class="popup" id="popup-login">
+    <p id="login-popup-message" style="color: green;"></p>
+  </div>
+
+  <div class="popup" id="popup-registration">
+    <p id="registration-popup-message" style="color: green;"></p>
   </div>
   <script src="Script.js"></script>
 </body>

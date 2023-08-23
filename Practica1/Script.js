@@ -1,16 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const textInput = document.getElementById("textInput");
-  const printButton = document.getElementById("printButton");
-  const clearButton = document.getElementById("clearButton");
+function showLoginMessage() {
+  var loginPopup = document.getElementById("popup-login");
+  var loginMessage = document.getElementById("login-popup-message");
+  var username = document.getElementById("username").value;
+  loginMessage.textContent = "¡Bienvenido, " + username + "! Login correcto.";
+  loginPopup.style.display = "block";
+}
 
-  printButton.addEventListener("click", () => {
-    const inputValue = textInput.value;
-    alert("Valor del campo de texto: " + inputValue);
-  });
-
-  clearButton.addEventListener("click", () => {
-    textInput.value = "";
-  });
-});
+function showRegistrationMessage() {
+  var registrationPopup = document.getElementById("popup-registration");
+  var registrationMessage = document.getElementById("registration-popup-message");
+  var username = document.getElementById("username").value;
+  registrationMessage.textContent = "¡Bienvenido, " + username + "! Registro con éxito.";
+  registrationPopup.style.display = "block";
+}
 
   
