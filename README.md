@@ -1,1 +1,1 @@
-"# prueba" 
+"Lab de aplicaciones moviles" 
