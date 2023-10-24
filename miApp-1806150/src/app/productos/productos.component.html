@@ -1,14 +1,22 @@
-<div class="productos-lista">
-  <h2>Listado de Productos</h2>
-  <ul>
-    <li *ngFor="let producto of productos">
-      <img src= {{producto.image}} alt="">
-      <h3>{{ producto.title }}</h3>
-      <p>Precio: {{ producto.price }}</p>
-      <p>Categoría: {{ producto.category }}</p>
-    </li>
-  </ul>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-thumbnail (click)="verDetalle(producto)">
+        <ion-img [src]="producto.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ producto.title }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
 
 
 

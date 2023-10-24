@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ProductosComponent } from './productos/productos.component';
 
 const routes: Routes = [
   {
@@ -8,9 +9,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/productos',
     pathMatch: 'full'
   },
+  {
+    path: 'producto-detalle/:id',
+    loadChildren: () => import('./producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
+  },
+  {
+    path: 'productos',
+    component: ProductosComponent,
+  },
+
 ];
 
 @NgModule({

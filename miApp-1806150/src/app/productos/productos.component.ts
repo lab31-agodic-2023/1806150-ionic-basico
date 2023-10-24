@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from '../consulta.service';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -9,7 +9,7 @@ import { ConsultaService } from '../consulta.service';
 export class ProductosComponent  implements OnInit {
   productos: any[] = [];
 
-  constructor(private consulta: ConsultaService) { }
+  constructor(private navCtrl: NavController, private consulta: ConsultaService) { }
 
   ngOnInit() {
     this.obtenerProductos();
@@ -21,6 +21,7 @@ export class ProductosComponent  implements OnInit {
       }
       )
     };
+    
 }
 
 
