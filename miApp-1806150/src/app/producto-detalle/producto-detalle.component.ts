@@ -7,23 +7,25 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./producto-detalle.component.scss'],
 })
 
-export class ProductoDetalleComponent implements OnInit {
-  producto: any;
+export class ProductoDetalleComponent  implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute,
-    private consulta: ConsultaService
-  ) {}
+  constructor(private consulta: ConsultaService, private ruta : ActivatedRoute) { }
 
   ngOnInit() {
-    
-}
-idProducto string = 
-producto: any = {};
-    realizarConsultaDetalle(idProducto: string): void {
-      this.consulta.getProductoDetalle(idProducto)
-      .subscribe((resp: Object) => {
-        console.log(resp); 
-        this.producto = resp as any; 
-      })
+    console.log(this.idProducto);
+    this.realizarConsultaDetalle(this.idProducto);
   }
+
+  idProducto: string = this.ruta.snapshot.params['id'];
+
+  producto: any = {};
+
+  realizarConsultaDetalle(idProducto: string): void {
+    this.consulta.getProductoDetalle(idProducto)
+    .subscribe((resp: Object) => {
+      console.log(resp);
+      this.producto = resp as any;
+    })
+  }
+
+}
