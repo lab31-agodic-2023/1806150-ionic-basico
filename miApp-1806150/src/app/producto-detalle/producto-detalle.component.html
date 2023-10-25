@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle del Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="producto">
+    <ion-img [src]="producto.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ producto.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Precio: {{ producto.price | currency:'USD':'symbol':'1.2-2' }}</p>
+      <p>Ranking: {{ producto.rating.rate }} / 5</p>
+      <p>Descripción: {{ producto.description }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="!producto">Cargando detalles del producto...</div>
+</ion-content>
+

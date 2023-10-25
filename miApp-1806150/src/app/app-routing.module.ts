@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProductosComponent } from './productos/productos.component';
+import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 
 const routes: Routes = [
   {
@@ -13,8 +14,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'producto-detalle/:id',
-    loadChildren: () => import('./producto-detalle/producto-detalle.module').then( m => m.ProductoDetallePageModule)
+    path: 'producto/:id',
+    component: ProductoDetalleComponent,
   },
   {
     path: 'productos',

@@ -6,16 +6,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let producto of productos">
-      <ion-thumbnail (click)="verDetalle(producto)">
-        <ion-img [src]="producto.image"></ion-img>
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ producto.title }}</h2>
-      </ion-label>
-    </ion-item>
+    <ion-card-content *ngFor="let producto of productos">
+      <ion-img [src]="producto.image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ producto.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <a [routerLink]="['producto/', producto.id]">Ver detalles</a>
+      </ion-card-content>
+    </ion-card-content>
   </ion-list>
 </ion-content>
+
 
 
 
